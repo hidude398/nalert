@@ -30,9 +30,15 @@
     <ClInclude Include="EthernetResources.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="NetworkLayerResources.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="nalert.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EthernetResources.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
