@@ -5,6 +5,7 @@
 #include <string>
 #include <time.h>
 //#include <mysqlx/xdevapi.h>
+// This keeps throwing errors for some strange reason
 
 namespace Analyzer {
 	class DBConnect {
@@ -50,6 +51,7 @@ namespace Analyzer {
 			std::string time;
 			std::cout << "Logged suspicious activity - " << maketime(meantime) << " \nData Hash: "
 				<< hash << "\nProtocol: " << protocol_num << "\nSource Address: " << src;
+			// TODO: Database connector log
 		}
 
 	};
