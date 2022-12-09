@@ -3,10 +3,13 @@
 #include<memory>
 // Use the timeval primitive from winsock
 #include <winsock.h>
+#define OPENSSL_API_COMPAT 0x10100000L
 #include <openssl/md5.h>
 
 #include "DBConnect.h"
 #include "AnalysisFunctions.h"
+
+
 
 namespace Analyzer {
 	void examine_ipv4(const uint8_t* data, size_t length, timeval timestamp) {

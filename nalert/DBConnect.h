@@ -4,6 +4,7 @@
 #include "EngineResources.h"
 #include <string>
 #include <time.h>
+//#include <mysqlx/xdevapi.h>
 
 namespace Analyzer {
 	class DBConnect {
@@ -26,15 +27,16 @@ namespace Analyzer {
 		}
 
 		// Stores singleton
-		static std::shared_ptr<DBConnect> obj;
+		static DBConnect* obj;
 		// private constructor to force use of getInstance() to create Singleton object
-		DBConnect() {}
+		DBConnect() {
+		}
 	public:
 		// Singleton accessor
-		static std::shared_ptr<DBConnect> getInstance()
+		static DBConnect* getInstance()
 		{
 			// If the singleton doesn't exist, make it
-			if (obj == NULL) obj = std::make_shared<DBConnect>(new DBConnect());
+			if (obj == NULL) obj = (new DBConnect());
 			// Return a shared pointer to the DBConnect class.
 			return obj;
 		}
