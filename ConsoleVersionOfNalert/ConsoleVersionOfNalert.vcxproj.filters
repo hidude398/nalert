@@ -14,54 +14,35 @@
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
     <Filter Include="Header Files\AnalysisEngine">
-      <UniqueIdentifier>{c8aa9f7d-5dd5-4872-b2ae-c762bac92e0d}</UniqueIdentifier>
+      <UniqueIdentifier>{d74d281b-19f8-4cbf-bf7b-6eb6de807cef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\AnalysisEngine">
+      <UniqueIdentifier>{1b2001ba-26cf-48e3-bcff-2c36780bc6b2}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="framework.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="targetver.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Resource.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="nalert.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Extractor.h">
-      <Filter>Header Files\AnalysisEngine</Filter>
-    </ClInclude>
-    <ClInclude Include="EngineResources.h">
-      <Filter>Header Files\AnalysisEngine</Filter>
-    </ClInclude>
-    <ClInclude Include="AnalysisFunctions.h">
-      <Filter>Header Files\AnalysisEngine</Filter>
-    </ClInclude>
-    <ClInclude Include="DBConnect.h">
-      <Filter>Header Files\AnalysisEngine</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="nalert.cpp">
+    <ClCompile Include="ConsoleVersionOfNalert.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\nalert\AnalysisFunctions.cpp">
+      <Filter>Source Files\AnalysisEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\nalert\Extractor.cpp">
+      <Filter>Source Files\AnalysisEngine</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="nalert.rc">
-      <Filter>Resource Files</Filter>
-    </ResourceCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <Image Include="small.ico">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="nalert.ico">
-      <Filter>Resource Files</Filter>
-    </Image>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="nalertDBModel.mwb" />
+    <ClInclude Include="..\nalert\DBConnect.h">
+      <Filter>Header Files\AnalysisEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\nalert\EngineResources.h">
+      <Filter>Header Files\AnalysisEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\nalert\Extractor.h">
+      <Filter>Header Files\AnalysisEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\nalert\AnalysisFunctions.h">
+      <Filter>Header Files\AnalysisEngine</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

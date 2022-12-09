@@ -2,11 +2,13 @@
 #include <pcap.h>
 #include <array>
 #include <stdint.h>
+#include <cstddef>
 #include <boost/dynamic_bitset.hpp>
 #include "NetworkLayerResources.h"
 
 namespace layer_two {
 
+	
 
 	class EthernetFrame {
 	public:
@@ -27,14 +29,13 @@ namespace layer_two {
 		// Postcondition: Returns the source address as a 6 value std::Array
 		std::array<uint8_t, 6> get_srce_addr();
 
+		layer_three::L3_Packet* get_payload();
+
 	private:
 		uint8_t* data;
-		int len;
+		std::size_t len;
 	};
 
-	template <std::size_t T>
-	struct ethernetPayload {
-		std::array<uint8_t, T> payload;
-	};
+	
 
 } // Close namespace layer_two

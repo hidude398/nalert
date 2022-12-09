@@ -11,12 +11,15 @@ namespace layer_two {
 	EthernetFrame::EthernetFrame(pcap_pkthdr* cap_head, uint8_t* data_in) {
 		// If the capture has no fragments of FCS, copy normally. Otherwise, if the last 4 chars are the FCS, drop them
 		if (cap_head->len - cap_head->caplen >= 4) {
-			data = new uint8_t[cap_head->caplen];
-			std::memcpy(data, data_in, cap_head->caplen);
+			len = cap_head->caplen;
+			data = new uint8_t[len];
+			std::memcpy(data, data_in, len);
 		} else {
 			// When the actual length - captured length <4, make sure to drop any remaining bytes of the FCS.
-			data = new uint8_t[cap_head->caplen - (4 - (cap_head->len - cap_head->caplen) )];
-			std::memcpy(data, data_in, cap_head->caplen);
+			len = cap_head->caplen - (4 - (cap_head->len - cap_head->caplen));
+			data = new uint8_t[len];
+			std::memcpy(data, data_in, len);
+			
 		}
 	}
 
@@ -41,6 +44,10 @@ namespace layer_two {
 		// Returns the 2nd set of 6 chars
 		std::memcpy(returnValue.data(), data + 6, 6);
 		return returnValue;
+	}
+
+	layer_three::L3_Packet* EthernetFrame::get_payload() {
+		
 	}
 
 
